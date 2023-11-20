@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PhonePeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('phonepe',[PhonePeController::class,'phonepe']);
+
+Route::any('phonepe-response',[PhonePeController::class,'response'])->name('phonepe-response');
+
